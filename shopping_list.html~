@@ -1,0 +1,6 @@
+<form>
+<h2>Add a food</h2>
+<input type="text" name="food">
+%s
+<button>Add</button>
+</form>
