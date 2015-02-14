@@ -5,8 +5,17 @@ api_version: 1
 threadsafe: true
 
 handlers:
+
 - url: /.*
-  script: asciichan.application
+  script: main.application
+#- url: /blog
+#  script: blog.application
+  
+#- url: /blog/newpost
+#  script: blog.application
+
+
+
 
 libraries:
 - name: jinja2

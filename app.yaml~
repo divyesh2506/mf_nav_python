@@ -1,0 +1,24 @@
+application: mf-nav-india
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  script: asciichan.application
+
+- url: /blog
+  script: blog.application
+
+- url: /blog/newpost
+  script: blog.application
+
+- url: /.*
+  script: asciichan.application
+
+
+
+libraries:
+- name: jinja2
+  version: latest

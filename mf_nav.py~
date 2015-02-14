@@ -105,5 +105,5 @@ application = webapp2.WSGIApplication([
     ('/', MainPage),
     ('/testform', TestHandler),
     ('/thanks', ThanksHandler)
-    ('/downloadNAV',DwnldFile),
+    #('/downloadNAV',DwnldFile),
 ], debug=True)

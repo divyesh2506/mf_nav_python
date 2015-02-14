@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Write a New Blog</title>
+  </head>
+  <style type="text/css">
+    h1{
+        text-align: center;
+    }
+    body {
+        font-family: sans-serif; width: 800px; margin: 0 auto; padding: 10px;
+    }
+    error {
+        color: red;
+    }
+    label {
+        display: block; font-size: 20px;
+    }
+    input[type=text] {
+        width: 600px; font-size: 20px; padding: 2px;
+    }
+    textarea {
+        width: 800px; height: 400px; font-size: 17px; font-family: monospace;
+    }
+    input[type=submit] {
+        font-size: 24px;
+    }
+    hr {
+        margin: 20px auto;
+    }
+
+    .Content + .Content {
+        margin-top: 20px;
+    }
+ </style>
+  <body>
+    <h1>/Add a new blog/</h1>
+    <form method="post">
+      <label>
+        <div>Title</div>
+        <input type="text" name="title" value="{{title}}">
+      </label>
+       <label>
+        <div>Content</div>
+        <textarea name="title" value="{{content}}"></textarea>
+      </label>
+      <input type="submit">
+      <div class="error">{{error}}</div>
+    </form>
+  </body>
+</html>
