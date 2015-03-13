@@ -8,9 +8,11 @@ handlers:
 
 - url: /.*
   script: main.application
+
+- url: /bootstrap
+  static_dir: bootstrap
 #- url: /blog
 #  script: blog.application
-  
 #- url: /blog/newpost
 #  script: blog.application
 

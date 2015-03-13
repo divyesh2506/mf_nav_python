@@ -14,5 +14,8 @@ application = webapp2.WSGIApplication([
     Route(r'/blog', handler='handlers.blog.BlogMainPage', name='bmp'),
     Route(r'/blog/<blog_id:\d+>', handler='handlers.blog.GetBlogWithID',
             name='blog_single', handler_method='get_blog'),
-    Route(r'/playcookie', handler='handlers.play_cookie.PCMainPage', name='fs'),
+    Route(r'/playcookie', handler='handlers.play_cookie.PCMainPage', name='pc'),
+    Route(r'/summary', handler='handlers.summary.SummaryPage', name='sp'),
+    Route(r'/populatedata', handler='handlers.index.DataPopulatePage', name='dpp'),
+    Route(r'/', handler='handlers.index.IndexPage', name='ip'),
 ], debug=True)

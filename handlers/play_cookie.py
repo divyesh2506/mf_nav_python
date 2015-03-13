@@ -25,13 +25,24 @@ from google.appengine.ext import db
 class PCMainPage(AppHandler):
    
     def render_front(self,subject="",art="",error=""):
-         blogs=db.GqlQuery("SELECT * FROM Blogs ORDER BY created DESC")
-         self.render("blogfront.html",blogs=blogs)
+         #blogs=db.GqlQuery("SELECT * FROM Blogs ORDER BY created DESC")
+         self.render("blogfront.html")
     
     def get(self):
+        self.response.headers['Content-Type']='text/plain'
+        visits=self.request.cookies.get('visits',0)
+        if visits.isdigit:
+            visits=int(visits) +1
+        else:
+            visits=0
+        self.response.headers.add_header('Set-Cookie','visits=%s' %visits)
+        if visits>1000:
+            self.write("YOu are the best!")
+        else:
+            self.write("You have been here %s times" %visits)
         #db.delete(Blogs.all())
 
-        self.render_front()
+        #self.render_front()
     	#self.write("asciichan!!")
     	#items=self.request.get_all("food")
         
